@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="author" content="Ashley Shindorf">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+<title> Gallery</title>
+<style>
+    * {
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        background-color: rgb(72, 151, 139);
+        text-align: center;
+        color: white;
+    }
+    img
+    {
+        border: 2px solid black;
+    }
+    .tips
+    {
+        border: 2px solid black;
+        margin-left: 250px;
+        width:60%
+    }
+</style>
+</head>
+<body>
+
+<h1><ins>Tips and Tricks</ins></h1>
+<br>
+<div class="img">
+<p>This is one of my first projects. From this experience, I learned the importance of using a good flux.</p>
+<p>After switching from liquid to paste flux, I was able to get smoother solder lines.</p>
+    <img src="https://mail.google.com/mail/u/0?ui=2&ik=5e086337ea&attid=0.3&permmsgid=msg-a:r-6368998943191936044&th=19d9c2033d979e9f&view=att&disp=safe&realattid=19d9c1d6f5e7a9b89f31&zw" width="300" height="300">
+    <br>
+    <br>
+<p>While soldering this chicken design, I tried using masking tape to hold the pieces together.</p>
+<p>This was especially helpful when working with the smaller pieces shown here.</p>
+    <img src="https://mail.google.com/mail/u/0?ui=2&ik=5e086337ea&attid=0.2&permmsgid=msg-a:r-6368998943191936044&th=19d9c2033d979e9f&view=att&disp=safe&realattid=19d9c1d6f61b94aa2ed3&zw" width="300" height="335">
+    <br>
+    <br>
+<p>This is my most recent and most challenging piece.</p>
+<p>While working on this project, I learned the importance of grinding each piece precisely so it fits together as envisioned, a step often overlooked.</p>
+<p>As you can see if you look closely, some pieces weren't cut perfecrly, leaving me with an unsymmetrical final outcome.</p>
+    <img src="https://mail.google.com/mail/u/0?ui=2&ik=5e086337ea&attid=0.0.1&permmsgid=msg-a:r-6368998943191936044&th=19d9c2033d979e9f&view=fimg&fur=ip&permmsgid=msg-a:r-6368998943191936044&sz=s0-l75-ft&attbid=ANGjdJ8lgfjnAw3FkgDY7HiK5BmHDnCgIrZyenicGp8mHCwx1L8I1KsyjcDWheQArI3t9P1fBh2J89aEfiwYe6C8puMVdmMUPHVs_tBGO1JN6nAe-_eOiY78HT-WHEc&disp=emb&realattid=ii_19d9c200cab258755eb4&zw" width="300" height="325">
+</p>
+<div class="tips">
+    <form id="tt" onsubmit="addInfo(event)">
+    <p>Have any tips and tricks of your own? Share them down below!</p>
+        <label for = "Other"> Other tips and tricks to share... </label>
+        <input type="text" id="other" name="other">
+         <br>
+         <br>
+        <input type="submit">
+        <input type="reset">
+    </form>
+    </div>
+<p id="info"> (Awaiting Input)</p>
+<br>
+<script>
+    function addInfo(event)
+{
+    event.preventDefault();
+    let formData= new FormData (event.target);
+    let sharedinfo= formData.get("other");
+    document.getElementById("info").innerHTML=sharedinfo;
+}
+</script>
+</div>
+<a href="./part1">Back to Home</a>
+</body>
+</html>
