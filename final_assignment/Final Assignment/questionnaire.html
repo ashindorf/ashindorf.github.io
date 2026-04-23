@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+    <html lang="en">
+<head>
+    <meta name="author" content=" Ashley Shindorf">
+    <meta name="viewport" content="width=device-width,inital-scale=1.0">
+    <meta charset = “UTF-8”>
+    <title> Questionnaire</title>
+<style>
+    *
+    {
+        font-family:'Times New Roman', Times, serif;
+        background-color: rgb(72, 151, 139);
+        text-align: center;
+        color:white;
+    }
+    h3
+    {
+        border: 2px solid black;
+        width: 50%;
+        margin-left: auto;
+        margin-right: auto;
+        padding: 2px;
+    }
+    body
+    {
+        border: 2px solid black;
+        width: 80%;
+        margin-left: auto;
+        margin-right: auto;
+        padding: 2px;
+    }
+</style>
+<body>
+    <h1 id="header">What template should you use?</h1>
+    <br>
+    <h2 id="img"></h2>
+<form onsubmit="process(event)">
+
+<h3>What type of project are you familiar with?</h3>
+<input type="radio" name="familiar" value="3"> Traditional<br>
+<input type="radio" name="familiar" value="2"> Modern<br>
+<input type="radio" name="familiar" value="1"> Neither<br>
+
+<h3>What type of project are you looking to create?</h3>
+<input type="radio" name="type" value="3"> Realistic <br>
+<input type="radio" name="type" value="2"> Abstract <br>
+<input type="radio" name="type" value="1"> Simple <br>
+
+<h3>What is your experience level?</h3>
+<input type="radio" name="experience" value="3"> Expert <br>
+<input type="radio" name="experience" value="2"> Intermediate <br>
+<input type="radio" name="experience" value="1"> Beginner <br>
+
+<br><br>
+<input type="submit" value="Get Template">
+<input type="reset" value="Reset" onclick="location.reload()">
+<br>
+<br>
+<a href="./part1">Back to Home</a>
+</form>
+
+<script>
+function process(event) {
+    event.preventDefault();
+
+    let formData = new FormData(event.target);
+
+    let total = 0;
+
+    for (let value of formData.values()) 
+    {
+        total += Number(value);
+    }
+
+    if (total >= 1 && total <= 4) {
+        document.getElementById("header").innerHTML = "Try This Template!";
+        document.getElementById("img").innerHTML ='<img src="https://th.bing.com/th/id/OIP.c3S9-WZwEXV-pGfqlCqRhAHaIj?w=202&h=233&c=7&r=0&o=7&dpr=1.5&pid=1.7&rm=3" width="300" height="300" alt="Beginner">';
+    } 
+    else if (total >= 5 && total <= 7) {
+        document.getElementById("header").innerHTML = "Try This Template!"; 
+        document.getElementById("img").innerHTML ='<img src="https://i.pinimg.com/736x/96/8d/0f/968d0f79d54539f7125acde700af8f15.jpg" width="300" height="300"  alt="Intermediate">';
+    } 
+    else if (total >= 8 && total <= 9) {
+        document.getElementById("header").innerHTML = "Try This Template!";
+        document.getElementById("img").innerHTML = '<img src="https://tse1.mm.bing.net/th/id/OIP.YzLoPmc3O0xAywEb1SlJpQHaJl?rs=1&pid=ImgDetMain&o=7&rm=3" width="300" height="300" alt="Expert">';
+    }
+}
+</script>
+</body>
+</html>
